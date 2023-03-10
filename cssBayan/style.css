@@ -1,7 +1,7 @@
 body {
   font-family: Roboto;
   background-color: #7365e0;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.5s;
 }
 
 .header {
@@ -71,6 +71,7 @@ body {
   background-color: #faf8f7;
   border-radius: 6px;
   width: 70%;
+  height: fit-content;
   color: #7365e0;
   padding: 20px 15px;
   box-shadow: rgba(0, 0, 0, 0.14) 0px 2px 2px 0px,
@@ -78,12 +79,19 @@ body {
   margin-bottom: 30px;
   font-weight: 600;
   list-style: none;
+  transition: height 0.5s;
+  cursor: pointer;
 }
 
 .content__item:hover,
 .content__item:has(.content__input:checked) {
   background-color: #7d8fda;
   color: #faf8f7;
+
+  animation-iteration-count: 1;
+  animation-duration: 0.5s;
+  animation-name: enlarge;
+  animation-fill-mode: forwards;
 }
 
 .content__input-container {
@@ -92,7 +100,8 @@ body {
   align-items: center;
 }
 
-.container__title {
+.content__title {
+  margin: 0;
 }
 
 .content__input {
@@ -110,6 +119,7 @@ body {
   background-image: url(./icons/close.svg);
   background-repeat: no-repeat;
   background-position: center;
+  transition: transform 0.5s;
 }
 
 .content__item:hover .content__open,
@@ -131,4 +141,33 @@ body {
 .content__item:hover .content__img,
 .content__item:has(.content__input:checked) .content__img {
   display: block;
+  animation-name: open;
+  animation-duration: 1.3s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-delay: 0s;
+}
+
+@keyframes open {
+  0% {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes enlarge {
+  0% {
+    height: 98px;
+  }
+  100% {
+    height: 400px;
+  }
 }
