@@ -98,7 +98,8 @@ body {
   background-position: center;
 }
 
-.content__item:hover .content__open {
+.content__item:hover .content__open,
+.content__item:focus .content__open {
   filter: invert(100%) sepia(0%) saturate(2873%) hue-rotate(277deg)
     brightness(103%) contrast(104%);
   transform: rotate(0deg);
@@ -113,6 +114,7 @@ body {
     rgba(0, 0, 0, 0.12) 0px 4px 25px 0px, rgba(0, 0, 0, 0.2) 0px 8px 10px -5px;
 }
 
-.content__item:hover .content__img {
+.content__item:hover .content__img,
+.content__item:focus .content__img {
   display: block;
 }
