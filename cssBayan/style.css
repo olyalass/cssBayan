@@ -68,7 +68,6 @@ body {
 }
 
 .content__item {
-  position: relative;
   background-color: #faf8f7;
   border-radius: 6px;
   width: 70%;
@@ -82,15 +81,27 @@ body {
 }
 
 .content__item:hover,
-.content__item:focus {
+.content__item:has(.content__input:checked) {
   background-color: #7d8fda;
   color: #faf8f7;
 }
 
+.content__input-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container__title {
+}
+
+.content__input {
+  visibility: hidden;
+  grid-area: input;
+  width: 1px;
+}
+
 .content__open {
-  position: absolute;
-  right: 20px;
-  top: 19.2px;
   transform: rotate(45deg);
   width: 20px;
   height: 20px;
@@ -102,7 +113,7 @@ body {
 }
 
 .content__item:hover .content__open,
-.content__item:focus .content__open {
+.content__input:checked + .content__open {
   filter: invert(100%) sepia(0%) saturate(2873%) hue-rotate(277deg)
     brightness(103%) contrast(104%);
   transform: rotate(0deg);
@@ -118,6 +129,6 @@ body {
 }
 
 .content__item:hover .content__img,
-.content__item:focus .content__img {
+.content__item:has(.content__input:checked) .content__img {
   display: block;
 }
