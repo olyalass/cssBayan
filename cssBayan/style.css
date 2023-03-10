@@ -1,6 +1,7 @@
 body {
   font-family: Roboto;
   background-color: #7365e0;
+  transition: all 0.5s ease-in-out;
 }
 
 .header {
@@ -62,6 +63,8 @@ body {
   max-width: 1200px;
   margin: 50px auto;
   padding: 0;
+
+  transition: all 0.5s ease-in-out;
 }
 
 .content__item {
