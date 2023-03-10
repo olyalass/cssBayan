@@ -1,0 +1,118 @@
+body {
+  font-family: Roboto;
+  background-color: #7365e0;
+}
+
+.header {
+  background-color: rgb(32, 32, 32);
+  padding-top: 30px;
+}
+
+.header__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Quicksand;
+}
+
+.title {
+  color: #faf8f7;
+  font-size: 45px;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.description {
+  max-width: 900px;
+  color: rgb(142, 142, 142);
+  text-align: center;
+  font-weight: 400;
+}
+
+.button__container {
+  display: flex;
+  width: 400px;
+  align-items: center;
+  justify-content: space-between;
+  color: rgb(142, 142, 142);
+}
+
+.button {
+  width: fit-content;
+  padding: 10px 15px;
+  border-radius: 28px;
+  text-decoration: none;
+  background-color: rgb(212, 212, 212);
+  color: rgb(32, 32, 32);
+}
+
+.button:hover {
+  background-color: #7365e0;
+  color: #a6b7df;
+}
+
+.description_sub {
+  color: #7365e0;
+}
+
+.content__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0;
+}
+
+.content__item {
+  position: relative;
+  background-color: #faf8f7;
+  border-radius: 6px;
+  width: 70%;
+  color: #7365e0;
+  padding: 20px 15px;
+  box-shadow: rgba(0, 0, 0, 0.14) 0px 2px 2px 0px,
+    rgba(0, 0, 0, 0.2) 0px 3px 1px -2px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px;
+  margin-bottom: 30px;
+  font-weight: 600;
+  list-style: none;
+}
+
+.content__item:hover,
+.content__item:focus {
+  background-color: #7d8fda;
+  color: #faf8f7;
+}
+
+.content__open {
+  position: absolute;
+  right: 20px;
+  top: 19.2px;
+  transform: rotate(45deg);
+  width: 20px;
+  height: 20px;
+  filter: invert(39%) sepia(81%) saturate(944%) hue-rotate(218deg)
+    brightness(92%) contrast(91%);
+  background-image: url(./icons/close.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.content__item:hover .content__open {
+  filter: invert(100%) sepia(0%) saturate(2873%) hue-rotate(277deg)
+    brightness(103%) contrast(104%);
+  transform: rotate(0deg);
+}
+
+.content__img {
+  display: none;
+  margin: 15px auto;
+  max-height: 350px;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 16px 38px -12px,
+    rgba(0, 0, 0, 0.12) 0px 4px 25px 0px, rgba(0, 0, 0, 0.2) 0px 8px 10px -5px;
+}
+
+.content__item:hover .content__img {
+  display: block;
+}
