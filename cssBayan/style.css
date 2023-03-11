@@ -108,6 +108,7 @@ body {
 }
 
 .content__input {
+  height: 0;
   visibility: hidden;
   grid-area: input;
   width: 0.063em;
@@ -131,10 +132,15 @@ body {
 }
 
 .content__item:hover .content__open,
-.content__input:checked + .content__open {
+.content__input:checked ~ .content__input-container > .content__open {
   filter: invert(100%) sepia(0%) saturate(2873%) hue-rotate(277deg)
     brightness(103%) contrast(104%);
   transform: rotate(0deg);
+}
+
+.content__item:active,
+.content__item:hover:active {
+  background-color: rgb(80, 63, 211);
 }
 
 .content__img {
@@ -150,7 +156,7 @@ body {
 }
 
 .content__item:hover .content__img,
-.content__item:has(.content__input:checked) .content__img {
+.content__input:checked ~ .content__img {
   display: block;
   min-height: fit-content;
   max-height: 70vh;
@@ -193,6 +199,12 @@ body {
     display: none;
   }
 
+  .content__title {
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 830px) {
   .content__item {
     cursor: default;
   }
