@@ -78,7 +78,7 @@ body {
   border-radius: 0.375em;
   width: 70%;
   height: fit-content;
-  color: #7365e0;
+  color: #a6b7df;
   padding: 1.25em 0.938em;
   box-shadow: rgba(0, 0, 0, 0.14) 0em 0.125em 0.125em 0em,
     rgba(0, 0, 0, 0.2) 0em 0.188em 0.063em -0.125em,
@@ -90,7 +90,6 @@ body {
   cursor: pointer;
 }
 
-.content__item:active,
 .content__item:has(.content__input:checked) {
   background-color: #7d8fda;
   color: #faf8f7;
@@ -182,6 +181,11 @@ body {
     visibility: visible;
   }
 
+  .content__container:hover
+    .content__item:not(:hover):not(:has(.content__input:checked))
+    .content__title {
+    color: #7365e0;
+  }
   .content__item:hover .content__open {
     filter: invert(100%) sepia(0%) saturate(2873%) hue-rotate(277deg)
       brightness(103%) contrast(104%);
